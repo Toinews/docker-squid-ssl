@@ -1,0 +1,10 @@
+squid:
+  build: .
+  ports:
+    - "3128:3128"
+  volumes:
+    - /tmp/squid.crt:/tmp/squid.crt
+    - /tmp/squid.key:/tmp/squid.key
+    - ./squid.conf:/etc/squid3/squid.conf
+    - /tmp/passwd:/etc/squid3/passwd
+  restart: always
